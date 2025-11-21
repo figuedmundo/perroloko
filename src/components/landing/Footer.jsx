@@ -2,30 +2,38 @@ import React from 'react';
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
-    return (
-        <footer className="footer" id="contact">
-            <div className="container footer-content">
-                <div className="footer-brand">
-                    <h3>HuesoLoko</h3>
-                    <p>Del horno de barro a su corazón.</p>
-                </div>
+  return (
+    <footer className="footer" id="contact">
+      <div className="container footer-content">
+        <div className="footer-brand">
+          <h3>Hueso<span className="text-primary">Loko</span></h3>
+          <p>From the clay oven to their heart.</p>
+        </div>
 
-                <div className="footer-socials">
-                    <a href="#" className="social-icon"><FaInstagram /></a>
-                    <a href="#" className="social-icon"><FaFacebook /></a>
-                    <a href="#" className="social-icon"><FaWhatsapp /></a>
-                </div>
+        <div className="footer-socials">
+          <a href="#" className="social-icon"><FaInstagram /></a>
+          <a href="#" className="social-icon"><FaFacebook /></a>
+          <a href="#" className="social-icon"><FaWhatsapp /></a>
+        </div>
 
-                <div className="footer-copy">
-                    <p>&copy; {new Date().getFullYear()} HuesoLoko. Todos los derechos reservados.</p>
-                </div>
-            </div>
+        <div className="footer-links">
+          <a href="#">Shop</a>
+          <a href="#">About Us</a>
+          <a href="#">FAQ</a>
+          <a href="#">Terms</a>
+        </div>
 
-            <style jsx>{`
+        <div className="footer-copy">
+          <p>&copy; {new Date().getFullYear()} HuesoLoko. All rights reserved.</p>
+        </div>
+      </div>
+
+      <style jsx>{`
         .footer {
-          background-color: var(--color-brown);
-          color: var(--color-cream);
-          padding: 4rem 0 2rem;
+          background-color: var(--color-bg);
+          color: var(--color-text);
+          padding: 6rem 0 3rem;
+          border-top: 2px solid var(--color-text);
         }
 
         .footer-content {
@@ -33,13 +41,17 @@ const Footer = () => {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          gap: 2rem;
+          gap: 2.5rem;
         }
 
         .footer-brand h3 {
-          color: var(--color-terracotta);
-          font-size: 2rem;
+          font-size: 2.5rem;
           margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+          font-size: 1.1rem;
+          opacity: 0.8;
         }
 
         .footer-socials {
@@ -48,26 +60,36 @@ const Footer = () => {
         }
 
         .social-icon {
-          font-size: 1.5rem;
-          color: white;
-          transition: color 0.2s;
+          font-size: 1.8rem;
+          color: var(--color-text);
+          transition: color 0.2s, transform 0.2s;
         }
 
         .social-icon:hover {
-          color: var(--color-terracotta);
+          color: var(--color-primary);
+          transform: scale(1.2);
+        }
+
+        .footer-links {
+          display: flex;
+          gap: 2rem;
+          font-weight: 700;
+          font-family: var(--font-heading);
+        }
+
+        .footer-links a:hover {
+          text-decoration: underline;
+          color: var(--color-primary);
         }
 
         .footer-copy {
           margin-top: 2rem;
           font-size: 0.9rem;
           opacity: 0.6;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          width: 100%;
-          padding-top: 2rem;
         }
       `}</style>
-        </footer>
-    );
+    </footer>
+  );
 };
 
 export default Footer;

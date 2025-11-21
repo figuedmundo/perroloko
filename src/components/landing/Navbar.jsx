@@ -1,40 +1,44 @@
 import React from 'react';
-import { FaShoppingBag, FaBars } from 'react-icons/fa';
+import { FaShoppingBag, FaBars, FaSearch } from 'react-icons/fa';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="container navbar-content">
-                <div className="logo">
-                    Hueso<span className="text-terracotta">Loko</span>
-                </div>
+  return (
+    <nav className="navbar">
+      <div className="container navbar-content">
+        <div className="nav-left hidden-mobile">
+          <a href="#shop" className="nav-link">SHOP</a>
+          <a href="#story" className="nav-link">ABOUT US</a>
+          <a href="#contact" className="nav-link">FAQ</a>
+        </div>
 
-                <div className="nav-links hidden-mobile">
-                    <a href="#shop">Shop</a>
-                    <a href="#story">Our Story</a>
-                    <a href="#contact">Contact</a>
-                </div>
+        <div className="logo">
+          HUESO<span className="text-primary">LOKO</span>
+        </div>
 
-                <div className="nav-actions">
-                    <div className="cart-icon">
-                        <FaShoppingBag size={24} color="var(--color-brown)" />
-                        <span className="cart-badge">2</span>
-                    </div>
-                    <button className="mobile-menu-btn hidden-desktop">
-                        <FaBars size={24} color="var(--color-brown)" />
-                    </button>
-                </div>
-            </div>
+        <div className="nav-actions">
+          <button className="icon-btn">
+            <FaSearch size={20} />
+          </button>
+          <div className="cart-container">
+            <button className="icon-btn cart-btn">
+              <FaShoppingBag size={20} />
+            </button>
+            <span className="cart-badge">1</span>
+          </div>
+          <button className="mobile-menu-btn hidden-desktop">
+            <FaBars size={24} />
+          </button>
+        </div>
+      </div>
 
-            <style jsx>{`
+      <style jsx>{`
         .navbar {
           position: sticky;
           top: 0;
-          background-color: rgba(255, 248, 240, 0.95);
-          backdrop-filter: blur(10px);
+          background-color: var(--color-bg);
           z-index: 1000;
-          padding: 1rem 0;
-          box-shadow: 0 2px 20px rgba(74, 64, 58, 0.05);
+          padding: 1.5rem 0;
+          border-bottom: 2px solid rgba(74, 44, 42, 0.1);
         }
 
         .navbar-content {
@@ -43,49 +47,66 @@ const Navbar = () => {
           align-items: center;
         }
 
-        .logo {
-          font-family: var(--font-heading);
-          font-size: 1.8rem;
-          font-weight: 700;
-          color: var(--color-brown);
-        }
-
-        .nav-links {
+        .nav-left {
           display: flex;
           gap: 2rem;
-          font-weight: 600;
         }
 
-        .nav-links a {
-          position: relative;
+        .nav-link {
+          font-family: var(--font-heading);
+          font-weight: 700;
+          font-size: 0.9rem;
+          letter-spacing: 0.05em;
+          color: var(--color-text);
           transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-          color: var(--color-terracotta);
+        .nav-link:hover {
+          color: var(--color-primary);
+        }
+
+        .logo {
+          font-family: var(--font-heading);
+          font-size: 2rem;
+          font-weight: 800;
+          color: var(--color-text);
+          letter-spacing: -0.05em;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
         .nav-actions {
           display: flex;
           align-items: center;
-          gap: 1.5rem;
+          gap: 1rem;
         }
 
-        .cart-icon {
+        .icon-btn {
+          background: none;
+          color: var(--color-text);
+          padding: 8px;
+          border-radius: 50%;
+          transition: background 0.2s;
+        }
+
+        .icon-btn:hover {
+          background-color: rgba(0,0,0,0.05);
+        }
+
+        .cart-container {
           position: relative;
-          cursor: pointer;
-          transition: transform 0.2s;
         }
 
-        .cart-icon:hover {
-          transform: scale(1.1);
+        .cart-btn {
+          color: var(--color-primary);
         }
 
         .cart-badge {
           position: absolute;
-          top: -8px;
-          right: -8px;
-          background-color: var(--color-terracotta);
+          top: 0;
+          right: 0;
+          background-color: var(--color-text);
           color: white;
           font-size: 0.7rem;
           font-weight: bold;
@@ -95,11 +116,24 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          border: 2px solid var(--color-bg);
         }
 
         .mobile-menu-btn {
           background: none;
           padding: 0;
+          color: var(--color-text);
+        }
+
+        @media (max-width: 768px) {
+          .logo {
+            position: static;
+            transform: none;
+          }
+          
+          .hidden-desktop {
+            display: block;
+          }
         }
 
         @media (min-width: 768px) {
@@ -108,8 +142,8 @@ const Navbar = () => {
           }
         }
       `}</style>
-        </nav>
-    );
+    </nav>
+  );
 };
 
 export default Navbar;

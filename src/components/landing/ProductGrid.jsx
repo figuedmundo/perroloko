@@ -79,14 +79,15 @@ const ProductGrid = () => {
           background: white;
           border-radius: 30px;
           padding: 1.5rem;
-          border: 2px solid var(--color-text);
-          box-shadow: var(--shadow-hard);
-          transition: transform 0.2s;
+          border: 2px solid transparent;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          transition: all 0.3s ease;
         }
 
         .product-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
+          transform: translateY(-10px);
+          border-color: var(--color-accent);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .card-image-container {
@@ -169,22 +170,21 @@ const ProductGrid = () => {
 
         .add-to-cart-btn {
           flex: 1;
-          background-color: white;
-          border: 2px solid var(--color-text);
+          background-color: var(--color-barro);
+          border: none;
           border-radius: 50px;
-          padding: 10px;
+          padding: 12px;
           font-weight: 700;
           font-size: 0.9rem;
-          color: var(--color-text);
-          box-shadow: 2px 2px 0px var(--color-text);
+          color: white;
+          box-shadow: 0 4px 10px rgba(217, 93, 57, 0.3);
           transition: all 0.2s;
         }
 
         .add-to-cart-btn:hover {
-          background-color: var(--color-text);
-          color: white;
-          transform: translate(-1px, -1px);
-          box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+          background-color: var(--color-barro-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 15px rgba(217, 93, 57, 0.4);
         }
       `}</style>
     </section>

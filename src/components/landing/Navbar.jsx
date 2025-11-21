@@ -38,7 +38,7 @@ const Navbar = () => {
           background-color: var(--color-bg);
           z-index: 1000;
           padding: 1.5rem 0;
-          border-bottom: 2px solid rgba(74, 44, 42, 0.1);
+          /* border-bottom removed for minimalist look */
         }
 
         .navbar-content {

@@ -28,10 +28,10 @@ const Hero = () => {
 
           {/* Decorative Scribbles */}
           <svg className="scribble scribble-1" viewBox="0 0 100 100">
-            <path d="M10,50 Q30,20 50,50 T90,50" fill="none" stroke="#2E86AB" strokeWidth="5" strokeLinecap="round" />
+            <path d="M10,50 Q30,20 50,50 T90,50" fill="none" stroke="var(--color-barro)" strokeWidth="5" strokeLinecap="round" />
           </svg>
           <svg className="scribble scribble-2" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="10" fill="#D95D39" />
+            <circle cx="50" cy="50" r="10" fill="var(--color-accent)" />
           </svg>
         </div>
       </div>
@@ -93,7 +93,7 @@ const Hero = () => {
           height: auto;
           border-radius: 50%; /* Circle crop */
           border: 4px solid white;
-          box-shadow: var(--shadow-hard);
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
           z-index: 1;
           background-color: white;
         }

@@ -5,88 +5,41 @@ const Footer = () => {
   return (
     <footer className="footer" id="contact">
       <div className="container footer-content">
-        <div className="footer-brand">
-          <h3>Hueso<span className="text-primary">Loko</span></h3>
-          <p>From the clay oven to their heart.</p>
-        </div>
-
-        <div className="footer-socials">
-          <a href="#" className="social-icon"><FaInstagram /></a>
-          <a href="#" className="social-icon"><FaFacebook /></a>
-          <a href="#" className="social-icon"><FaWhatsapp /></a>
-        </div>
-
         <div className="footer-links">
-          <a href="#">Shop</a>
-          <a href="#">About Us</a>
-          <a href="#">FAQ</a>
-          <a href="#">Terms</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Whatsapp</a>
         </div>
-
-        <div className="footer-copy">
-          <p>&copy; {new Date().getFullYear()} HuesoLoko. All rights reserved.</p>
-        </div>
+        <p>&copy; {new Date().getFullYear()} HuesoLoko. Hecho con amor y barro.</p>
       </div>
 
       <style jsx>{`
         .footer {
-          background-color: var(--color-bg);
-          color: var(--color-text);
-          padding: 6rem 0 3rem;
-          border-top: 2px solid var(--color-text);
+          background-color: var(--color-smoke);
+          color: white;
+          text-align: center;
+          padding: 40px 5%;
         }
 
         .footer-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 2.5rem;
-        }
-
-        .footer-brand h3 {
-          font-size: 2.5rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .footer-brand p {
-          font-size: 1.1rem;
-          opacity: 0.8;
-        }
-
-        .footer-socials {
-          display: flex;
-          gap: 1.5rem;
-        }
-
-        .social-icon {
-          font-size: 1.8rem;
-          color: var(--color-text);
-          transition: color 0.2s, transform 0.2s;
-        }
-
-        .social-icon:hover {
-          color: var(--color-primary);
-          transform: scale(1.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         .footer-links {
-          display: flex;
-          gap: 2rem;
-          font-weight: 700;
-          font-family: var(--font-heading);
+            margin-bottom: 20px;
         }
-
-        .footer-links a:hover {
-          text-decoration: underline;
-          color: var(--color-primary);
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            opacity: 0.7;
+            font-family: var(--font-heading);
+            font-weight: 700;
         }
-
-        .footer-copy {
-          margin-top: 2rem;
-          font-size: 0.9rem;
-          opacity: 0.6;
-        }
+        .footer-links a:hover { opacity: 1; }
       `}</style>
     </footer>
   );

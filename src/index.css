@@ -1,16 +1,21 @@
 :root {
-  /* Paleta de Colores "Snacks of Substance" Style */
-  --color-bg: #FFF8F3;
-  /* Very warm, almost blush cream */
-  --color-text: #4A2C2A;
-  /* Deep, warm brown */
-  --color-primary: #D95D39;
-  /* Terracotta/Burnt Orange */
-  --color-secondary: #F4B942;
-  /* Mustard Yellow */
-  --color-accent: #2E86AB;
-  /* A blue accent for contrast (like the scribbles) */
+  /* Paleta de Colores "Barro & Humo" */
+  --color-cream: #FFF8F0;
+  /* Fondo suave */
+  --color-barro: #D95D39;
+  /* Terracota intenso (Impacto) */
+  --color-barro-dark: #B34020;
+  --color-smoke: #4A403A;
+  /* Texto oscuro */
+  --color-accent: #F0A202;
+  /* Amarillo mostaza para detalles */
   --color-white: #FFFFFF;
+
+  /* Mapped to generic names for compatibility if needed, or use specific names */
+  --color-bg: var(--color-cream);
+  --color-text: var(--color-smoke);
+  --color-primary: var(--color-barro);
+  --color-secondary: var(--color-accent);
 
   /* Typography */
   --font-heading: 'Fredoka', sans-serif;

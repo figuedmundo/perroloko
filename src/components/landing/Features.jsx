@@ -21,79 +21,43 @@ const Features = () => {
   ];
 
   return (
-    <section className="features-section">
-      <div className="container">
-        <div className="features-grid">
-          {features.map((feature, index) => (
-            <div key={index} className="feature-card">
-              <div className="feature-icon">
-                {feature.icon}
-              </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.desc}</p>
-            </div>
-          ))}
+    <div className="features-bar">
+      {features.map((feature, index) => (
+        <div key={index} className="feature">
+          <span className="icon">{feature.icon}</span>
+          {feature.title}
         </div>
-      </div>
+      ))}
 
       <style jsx>{`
-        .features-section {
-          padding: 4rem 0;
-          margin: 2rem 0;
-        }
-
-        .features-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 3rem;
-          text-align: center;
-        }
-
-        .feature-card {
+        .features-bar {
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1.5rem;
-        }
-
-        .feature-icon {
-          font-size: 2.5rem;
-          color: var(--color-primary);
+          justify-content: space-around;
+          flex-wrap: wrap;
+          padding: 40px 5%;
           background-color: white;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
+          border-radius: 20px;
+          margin: 0 5%;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+          gap: 20px;
+        }
+
+        .feature {
           display: flex;
           align-items: center;
-          justify-content: center;
-          border: 2px solid var(--color-text);
-          box-shadow: var(--shadow-hard);
-          transition: transform 0.2s;
+          gap: 10px;
+          color: var(--color-barro);
+          font-weight: 700;
+          font-size: 0.9rem;
+          margin: 10px;
+          font-family: var(--font-heading);
         }
 
-        .feature-card:hover .feature-icon {
-          transform: scale(1.1) rotate(5deg);
-        }
-
-        .feature-card h3 {
-          font-size: 1.8rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .feature-card p {
-          color: var(--color-text);
-          font-size: 1.1rem;
-          max-width: 250px;
-          line-height: 1.4;
-        }
-
-        @media (min-width: 768px) {
-          .features-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
+        .icon {
+          font-size: 1.2rem;
         }
       `}</style>
-    </section>
+    </div>
   );
 };
 

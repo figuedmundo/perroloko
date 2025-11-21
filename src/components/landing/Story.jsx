@@ -29,7 +29,7 @@ const Story = () => {
 
       <style jsx>{`
         .story-section {
-          background-color: var(--color-primary);
+          background-color: var(--color-barro);
           color: white;
           padding: 8rem 0;
           position: relative;
